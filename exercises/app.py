@@ -13,9 +13,8 @@ def home():
 
 @app.route('/student/<int:student_id>')
 def display_student(student_id):
-    student= session.query(student_id
-    ).first()
+    student = query_by_id(student_id)
     return render_template(
-        'student.html', n = student_id)        
+        'student.html', student = student)        
 
 app.run(debug=True)
